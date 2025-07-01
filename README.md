@@ -35,38 +35,32 @@ limitations under the License.
 
 > Return an unsigned 32-bit integer corresponding to the less significant 32 bits of a [double-precision floating-point number][ieee754].
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/number-float64-base-get-low-word
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-getLowWord = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-get-low-word@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var getLowWord = require( 'path/to/vendor/umd/number-float64-base-get-low-word/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-get-low-word@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.getLowWord;
-})();
-</script>
+var getLowWord = require( '@stdlib/number-float64-base-get-low-word' );
 ```
 
 #### getLowWord( x )
@@ -88,16 +82,11 @@ var w = getLowWord( 3.14e201 ); // => 10010011110010110101100010000010
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-get-low-word@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var floor = require( '@stdlib/math-base-special-floor' );
+var randu = require( '@stdlib/random-base-randu' );
+var pow = require( '@stdlib/math-base-special-pow' );
+var getLowWord = require( '@stdlib/number-float64-base-get-low-word' );
 
 var frac;
 var exp;
@@ -112,11 +101,6 @@ for ( i = 0; i < 100; i++ ) {
     w = getLowWord( x );
     console.log( 'x: %d. low word: %d.', x, w );
 }
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -125,7 +109,92 @@ for ( i = 0; i < 100; i++ ) {
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/number/float64/base/get_low_word.h"
+```
+
+#### stdlib_base_float64_get_low_word( x, \*low )
+
+Extracts the unsigned 32-bit integer corresponding to the less significant 32 bits of a double-precision floating-point number.
+
+```c
+#include <stdint.h>
+
+uint32_t low;
+stdlib_base_float64_get_low_word( 3.14, &low );
+```
+
+The function accepts the following arguments:
+
+-   **x**: `[in] double` input value.
+-   **low**: `[out] uint32_t*` destination for lower order word.
+
+```c
+void stdlib_base_float64_get_low_word( const double x, uint32_t *low );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/number/float64/base/get_low_word.h"
+#include <stdint.h>
+#include <stdio.h>
+
+int main( void ) {
+    double x[] = { 3.14, -3.14, 0.0, 0.0/0.0 };
+
+    uint32_t low;
+    int i;
+    for ( i = 0; i < 4; i++ ) {
+        stdlib_base_float64_get_low_word( x[ i ], &low );
+        printf( "%lf => low: %u\n", x[ i ], low );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -218,9 +287,9 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/number/float64/base/get-high-word]: https://github.com/stdlib-js/number-float64-base-get-high-word/tree/umd
+[@stdlib/number/float64/base/get-high-word]: https://github.com/stdlib-js/number-float64-base-get-high-word
 
-[@stdlib/number/float64/base/set-high-word]: https://github.com/stdlib-js/number-float64-base-set-high-word/tree/umd
+[@stdlib/number/float64/base/set-high-word]: https://github.com/stdlib-js/number-float64-base-set-high-word
 
 <!-- </related-links> -->
 
