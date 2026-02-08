@@ -44,6 +44,11 @@ limitations under the License.
 To use in Observable,
 
 ```javascript
+getLowWord = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-get-low-word@umd/browser.js' )
+```
+The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/number-float64-base-get-low-word/tags). For example,
+
+```javascript
 getLowWord = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-get-low-word@v0.2.3-umd/browser.js' )
 ```
 
@@ -56,7 +61,7 @@ var getLowWord = require( 'path/to/vendor/umd/number-float64-base-get-low-word/i
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-get-low-word@v0.2.3-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-get-low-word@umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -95,7 +100,7 @@ var w = getLowWord( 3.14e201 ); // => 10010011110010110101100010000010
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-get-low-word@v0.2.3-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-get-low-word@umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 
