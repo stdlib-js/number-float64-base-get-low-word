@@ -42,6 +42,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import getLowWord from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-get-low-word@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/number-float64-base-get-low-word/tags). For example,
+
+```javascript
 import getLowWord from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-get-low-word@v0.2.3-deno/mod.js';
 ```
 
@@ -68,7 +73,7 @@ var w = getLowWord( 3.14e201 ); // => 10010011110010110101100010000010
 import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@deno/mod.js';
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
 import pow from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@deno/mod.js';
-import getLowWord from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-get-low-word@v0.2.3-deno/mod.js';
+import getLowWord from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-get-low-word@deno/mod.js';
 
 var frac;
 var exp;
