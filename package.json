@@ -100,7 +100,8 @@
     "frac",
     "signficand",
     "mantissa",
-    "ieee754"
+    "ieee754",
+    "number"
   ],
   "funding": {
     "type": "opencollective",
